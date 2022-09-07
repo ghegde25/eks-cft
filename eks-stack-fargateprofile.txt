@@ -1,0 +1,24 @@
+{
+   "Resources" : {
+      "EKSFargateProfile" : {
+         "Type" : "AWS::EKS::FargateProfile",
+         "Properties" : {
+            "FargateProfileName" : "fargate-profile-poc2",
+            "ClusterName" : "poc-eks",
+            "PodExecutionRoleArn" : "arn:aws:iam::787098058239:role/AmazonEKSFargatePodExecutionRole",
+            "Subnets" : [ "subnet-0ce1bcbfd9f0cc9c0", "subnet-06de8c90f51e7e94c" ],
+            "Selectors" : [
+               {
+                  "Namespace" : "default",
+                  "Labels" : [
+                     {
+                        "Key" : "infrastructure",
+                        "Value" : "fargate"
+                     }
+                  ]
+               }
+            ]
+         }
+      }
+   }
+}

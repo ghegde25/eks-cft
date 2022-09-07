@@ -1,0 +1,24 @@
+{
+    "Resources": {
+        "EKSNodegroup": {
+            "Type": "AWS::EKS::Nodegroup",
+            "Properties": {
+                "ClusterName": "poc-eks",
+                "NodeRole": "arn:aws:iam::787098058239:role/AmazonEKSNodeRole",
+                "ScalingConfig": {
+                    "MinSize": 3,
+                    "DesiredSize": 5,
+                    "MaxSize": 7
+                },
+                "Labels": {
+                    "Key1": "Value1",
+                    "Key2": "Value2"
+                },
+                "Subnets": [
+                    "subnet-0ce1bcbfd9f0cc9c0",
+                    "subnet-06de8c90f51e7e94c"
+                ]
+            }
+        }
+    }
+}
